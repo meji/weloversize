@@ -1,0 +1,43 @@
+
+:root {
+  //Variables
+
+  //gutters
+  --s: 8px;
+  --m: calc(var(--s)*2); //16
+  --l: calc(var(--s)*3); //24
+  --xl: calc(var(--s)*4); //32
+  --xxl: calc(var(--s)*5); //40
+  --xxxl: calc(var(--s)*6); //48
+  --xxxxl: calc(var(--s)*7); //56
+  --xxxxxl: calc(var(--s)*8); //64
+  --superxl: calc(var(--s)*10); //80
+
+  //Radius
+  --rm: 6px;
+
+  // fonts
+  --font-body: 'Open Sans', Helvetica, sans-serif;
+  --font-titles: "Oswald",  Helvetica, sans-serif;
+  --body-text-s: 14px;
+  --body-text-m: 16px;
+  --body-text-l: 18px;
+
+
+  //colores
+  --c-main:#449241;;
+  --on-c-main: #fff;
+  --c-secondary: #F0D943;
+  --on-c-secondary: #000;
+  --c-main-light:#91CC87;
+  --c-grey: #333333;
+  --c-grey-dark: #171717;
+  --c-grey-light: #BBBBBB;
+
+  //Transitions
+  --transition: 0.3s;
+
+}
+.focus{
+  box-shadow: var(--focus-shadow)
+}

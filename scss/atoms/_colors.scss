@@ -1,0 +1,22 @@
+.text-white {
+  color: #fff;
+  * {
+    color: #fff;
+  }
+  @include headings{
+    color: #fff;
+  }
+}
+.main-bg {
+  background: var(--c-main);
+}
+
+.grey-bg {
+  background: var(--c-grey-l-light);
+}
+
+.main-c{
+  color: var(--c-main);
+}
+
+

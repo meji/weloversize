@@ -1,0 +1,176 @@
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+$grid-breakpoints: (
+  xs: 375px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1280px,
+  xl: 1440px,
+) !default;
+
+
+// Respond above and below.z
+@mixin respond-above($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value +1 ) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+@mixin respond-below($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+.full-column{
+  grid-column: 1/-1;
+}
+/**/
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: var(--m);
+  margin:0 var(--m);
+  &.full{
+    display: flex;
+    flex-direction: column;
+  }
+  &.column{
+    flex-direction: column;
+  }
+  .col-1 {
+    grid-column:span 1;
+  }
+  .col-2 {
+    grid-column:span 2;
+  }
+  .col-3 {
+    grid-column:span 3;
+  }
+  .col-4 {
+    grid-column:span 4;
+  }
+  .col-5 {
+    grid-column:span 5;
+  }
+  .col-6 {
+    grid-column:span 6;
+  }
+  .col-7 {
+    grid-column:span 7;
+  }
+  .col-8 {
+    grid-column:span 8;
+  }
+  .col-9 {
+    grid-column:span 9;
+  }
+  .col-10 {
+    grid-column: span 10;
+  }
+  .col-11 {
+    grid-column: span 11;
+  }
+  .col-12 {
+    grid-column: span 12;
+  }
+}
+
+@include respond-above(sm){
+  .container{
+    grid-column-gap: var(--l);
+    margin:0 var(--xl);
+  }
+}
+@include respond-above(md){
+  .container{
+    margin:0 var(--xxxxl);
+    &.small{
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &.medium{
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &.center{
+      text-align: center;
+    }
+    .col-l-1 {
+      grid-column:span 1;
+    }
+    .col-l-2 {
+      grid-column:span 2;
+    }
+    .col-l-3 {
+      grid-column:span 3;
+    }
+    .col-l-4 {
+      grid-column:span 4;
+    }
+    .col-l-5 {
+      grid-column:span 5;
+    }
+    .col-l-6 {
+      grid-column:span 6;
+    }
+    .col-l-7 {
+      grid-column:span 7;
+    }
+    .col-l-8 {
+      grid-column:span 8;
+    }
+    .col-l-9 {
+      grid-column:span 9;
+    }
+    .col-l-10 {
+      grid-column: span 10;
+    }
+    .col-l-11 {
+      grid-column: span 11;
+    }
+    .col-l-12 {
+      grid-column: span 12;
+    }
+  }
+}
+@include respond-above(xl){
+  .container{
+    margin:0 var(--xxxxxl);
+  }
+}
+

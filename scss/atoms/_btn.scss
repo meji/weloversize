@@ -1,0 +1,44 @@
+.btn, body input.btn[type=submit]{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--l);
+  height: 49px;
+  color: #000;
+  background: var(--c-secondary);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: none;
+  width: fit-content;
+  transition: var(--transition);
+  white-space: nowrap;
+  border-radius: var(--rm);
+  &.full, &.mobile-full{
+    display: flex;
+    width: 100%;
+  }
+  &:hover{
+    background: var(--c-main);
+  }
+  &[disabled], &:disabled{
+    background:var(--c-grey);
+  }
+  &.white{
+    background: #fff;
+    color: var(--c-grey-m-dark);
+    &:hover{
+      background: var(--c-grey-m-dark);
+      color: #fff;
+    }
+  }
+  i{
+    margin-right: var(--s);
+    font-size: 1.5rem;
+  }
+}
+
+@include respond-above(sm){
+  .btn.mobile-full{
+    width: fit-content;
+  }
+}

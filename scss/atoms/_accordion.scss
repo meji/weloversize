@@ -1,0 +1,66 @@
+.accordion,
+*.accordion {
+  cursor: pointer;
+  padding: var(--l) 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+  //outline: none;
+  transition: var(--transition);
+  position: relative;
+  background: var(--c-grey-l-light);
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  border-bottom: var(--border-header);
+  margin-top: calc(var(--s)/2);
+  .text {
+    justify-self: flex-start;
+    margin-right: auto;
+    font-weight: 700;
+  }
+  &.active .fa-angle-down:before {
+    content: "\f106";
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  margin-bottom: 2px;
+  .m-hidden{
+    display: none;
+  }
+}
+.panel {
+  padding: 0;
+  background-color: transparent;
+  height: 0;
+  overflow: hidden;
+  margin-top: -2px;
+  transition: var(--transition);
+  opacity:0;
+}
+.panel.active {
+  height: auto;
+  opacity: 1;
+}
+.accordion.active + .panel.active .text{
+  padding: var(--l) 0;
+}
+
+
+@include respond-above(md){
+  .accordion-container{
+    text-align: left;
+  }
+  .accordion, *.accordion{
+    .m-hidden{
+      display: inline;
+    }
+    i.icon-chevron-down{margin-left: var(--xxxl)}
+    text-align: left;
+  }
+  //.accordion.active + .panel.active .text{
+  //  padding: var(--l) var(--xxxl);
+  //}
+}
