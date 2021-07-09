@@ -18,26 +18,24 @@
 
   // fonts
   --font-body: 'Open Sans', Helvetica, sans-serif;
-  --font-titles: "Oswald",  Helvetica, sans-serif;
+  --font-titles: "PlayFair Display",  Helvetica, sans-serif;
   --body-text-s: 14px;
   --body-text-m: 16px;
   --body-text-l: 18px;
 
 
   //colores
-  --c-main:#449241;;
-  --on-c-main: #fff;
-  --c-secondary: #F0D943;
-  --on-c-secondary: #000;
-  --c-main-light:#91CC87;
+  --c-main:#F1AAC0;
+  --on-c-main: #60444D;
+  --c-secondary: #60444D;
+  --on-c-secondary: #fff;
+  --c-yellow:#91CC87;
+  --c-link: #D74371;
   --c-grey: #333333;
   --c-grey-dark: #171717;
   --c-grey-light: #BBBBBB;
 
   //Transitions
   --transition: 0.3s;
+}
 
-}
-.focus{
-  box-shadow: var(--focus-shadow)
-}
