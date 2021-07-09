@@ -15,6 +15,22 @@ section.extended{
     padding-right: var(--cont-margin);
   }
 }
+@include respond-below(md){
+  .mobile-extended{
+    width: calc(100% + var(--xl)*2);
+    margin-left: calc(-1 * var(--xl));
+    margin-right: calc(-1 * var(--xl));
+  }
+}
+
+@include respond-below(sm){
+  .mobile-extended{
+    width: calc(100% + var(--m)*2);
+    margin-left: calc(-1 * var(--m));
+    margin-right: calc(-1 * var(--m));
+  }
+}
+
 
 section.absolute{
   position: relative;

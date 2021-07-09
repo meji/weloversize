@@ -168,9 +168,15 @@ $grid-breakpoints: (
     }
   }
 }
-@include respond-above(xl){
+@include respond-above(lg){
   .container{
-    margin:0 var(--xxxxxl);
+    max-width: 1200px;
+    margin: auto;
   }
 }
+//@include respond-above(xl){
+//  .container{
+//    margin:0 var(--xxxxxl);
+//  }
+//}
 

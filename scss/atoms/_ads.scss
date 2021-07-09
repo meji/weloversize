@@ -1,0 +1,18 @@
+.mon{
+  background:var(--c-main);
+  padding: var(--l);
+  position: relative;
+  &:after{
+    content: "";
+    width: 76px;
+    height: 90px;
+    background: url('img/dark-heart.svg') no-repeat center center;
+    background-size: 100%;
+    position: absolute;
+    top: var(--s);
+    left: var(--s);
+  }
+  .mon-inside{
+    min-height: 60px;
+  }
+}
