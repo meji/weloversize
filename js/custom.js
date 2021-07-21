@@ -23,9 +23,9 @@ const headerInteraction = () => {
     document.getElementById("menu-toggle").addEventListener("click", () => {
       document.getElementById("wrapper").classList.toggle("open");
     });
-    document.querySelector("#header .close").addEventListener("click", () => {
-      document.getElementById("wrapper").classList.toggle("open");
-    });
+    // document.querySelector("#header .close").addEventListener("click", () => {
+    //   document.getElementById("wrapper").classList.toggle("open");
+    // });
   }
 };
 
@@ -50,47 +50,6 @@ const videoInteraction = () => {
         e.currentTarget.remove();
       })
     : null;
-};
-
-//Método accordion interaction
-const accordion = () => {
-  if (document.getElementsByClassName("accordion")) {
-    const acc = document.getElementsByClassName("accordion");
-    let i;
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        document
-          .querySelector(".accordion-container")
-          .querySelectorAll(".accordion")
-          .forEach(el => {
-            el.classList.remove("active");
-            el.nextElementSibling.classList.remove("active");
-          });
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("active");
-        const topDistance =
-          window.pageYOffset + this.getBoundingClientRect().top;
-        window.scroll({
-          top: topDistance - 128,
-          left: 0,
-          behavior: "smooth"
-        });
-      });
-    }
-  }
-};
-
-const accordionSimple = () => {
-  if (document.getElementsByClassName("accordion")) {
-    const acc = document.getElementsByClassName("accordion");
-    let i;
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("active");
-      });
-    }
-  }
 };
 
 //Scroll Up para cabecera
@@ -145,106 +104,10 @@ const smoothScrolls = () => {
   }
 };
 
-/*Tabs*/
-const tabsFunctionality = () => {
-  const myTabs = document.querySelectorAll("ul.nav-tabs > li");
-  function myTabClicks(tabClickEvent) {
-    console.log("click");
-    for (var i = 0; i < myTabs.length; i++) {
-      myTabs[i].classList.remove("active");
-    }
-    const clickedTab = tabClickEvent.currentTarget;
-    clickedTab.classList.add("active");
-    tabClickEvent.preventDefault();
-    const myContentPanes = document.querySelectorAll(".tab-pane");
-    for (i = 0; i < myContentPanes.length; i++) {
-      myContentPanes[i].classList.remove("active");
-    }
-    const anchorReference = tabClickEvent.target;
-    const activePaneId = anchorReference.dataset.href;
-    const activePane = document.getElementById(activePaneId);
-    activePane.classList.add("active");
-  }
-  for (i = 0; i < myTabs.length; i++) {
-    myTabs[i].addEventListener("click", myTabClicks);
-  }
-};
-
-/*Filters*/
-const fold = () => {
-  const filterTitles = document.querySelectorAll(".filter-title");
-  const filterSwitch = document.getElementById("filter-switch");
-  const closeFilter = document.getElementById("close-filters");
-  if (filterTitles.length > 0) {
-    filterTitles.forEach(title => {
-      title.addEventListener("click", function(e) {
-        e.target.parentNode.classList.toggle("folded");
-      });
-    });
-  }
-  if (filterSwitch) {
-    filterSwitch.addEventListener("click", function(e) {
-      document
-        .getElementById("filter-global-container")
-        .classList.add("opened");
-    });
-    closeFilter.addEventListener("click", function(e) {
-      document
-        .getElementById("filter-global-container")
-        .classList.remove("opened");
-    });
-  }
-};
-
 //Iniciamos métodos en document ready.
 docReady(
   headerInteraction(),
+  fixedHeaderInteraction(),
   // videoInteraction(),
-  // accordionSimple(),
   smoothScrolls()
-  // tabsFunctionality(),
-  // fold(),
 );
-
-//Swiper
-if (typeof Swiper === "function") {
-  window.addEventListener("load", () => {
-    const heroSlider = new Swiper(".swiper-container.hero-slider", {
-      slidesPerView: 1,
-      loop: true,
-      speed: 1000,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: ".hero-slider-pagination",
-        type: "progressbar"
-      },
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true
-      }
-    });
-    const featuredSlider = new Swiper(".swiper-container.featured-slider", {
-      slidesPerView: 1.45,
-      loop: true,
-      speed: 1000,
-      spaceBetween: 16,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      navigation: {
-        nextEl: ".swiper-button-next-featured",
-        prevEl: ".swiper-button-prev-featured"
-      },
-      breakpoints: {
-        600: {
-          slidesPerView: 1.2,
-          spaceBetween: 16
-        }
-      }
-    });
-  });
-}

@@ -4,7 +4,7 @@ header#header{
   top:0;
   left:0;
   width: 100%;
-  height: 70px;
+  height: 60px;
   background: transparent;
   z-index: 100;
   padding:0 var(--l);
@@ -26,7 +26,7 @@ header#header{
   }
   a{
     color: #fff;
-    &:hover{color: #fff;}
+    &:hover{color: var(--c-yellow);}
   }
   &:after{
     content:"";
@@ -62,6 +62,7 @@ header#header{
 
 #wrapper.open{
   header#header{
+    height: 60px;
     #menu-toggle{
       vertical-align: middle;
       position: relative;
@@ -76,6 +77,10 @@ header#header{
         transform: translateY(-10px) rotate(-135deg);;
       }
     }
+    &:after{
+      height: 60px;
+      background: rgba(0,0,0,0.7)
+    }
   }
 }
 
@@ -83,7 +88,7 @@ header#header{
   #header{
     height: 60px;
     &:after{
-      height: 59px;
+      height: 60px;
       background: rgba(0,0,0,0.7)
     }
     #logo{
@@ -145,7 +150,7 @@ header#header{
     #header{
       height: 60px;
       &:after{
-        height: 59px;
+        height: 60px;
         background: rgba(0,0,0,0.7)
       }
     }
@@ -157,32 +162,50 @@ header#header{
   #wrapper{
     #header{
       nav{
-        transform: translateX(100%);
+        transform: translateX(-100%);
         position: fixed;
-        top: 90px;
+        top: 60px;
         left: 0;
-        width: 100vw;
+        width: 80vw;
         min-height: calc(100vh - 90px);
-        background: rgba(0,0,0.95);
+        background: var(--c-main);
         transition: var(--transition);
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: var(--m);
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0;
         > ul{
           order: 1;
           width: 100%;
           flex-direction: column;
           list-style: none;
-          justify-content: center;
-          align-items: center;
+          justify-content: flex-start;
+          align-items: flex-start;
           font-size: 1.5rem;
           font-weight: 600;
           text-align: center;
-          margin-top: auto;
           li{
-            margin-bottom: var(--xl);
+            text-align:left;
+            border-bottom: 1px solid var(--c-secondary);
+            margin:0;
+            a{
+              color: var(--c-secondary);
+              font-size: 1rem;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              height: 52px;
+              padding: 0 var(--m);
+              i{
+                margin-right: var(--s);
+              }
+            }
+            &:not(.special) a:after{
+              content: "\f0da";
+              font-family:"Font Awesome 5 Free";
+              margin-left: auto;
+            }
           }
         }
         .social {

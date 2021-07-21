@@ -47,6 +47,7 @@
     grid-column-gap: 0;
   }
 }
+
 @include respond-above(lg){
   .featured{
     display: grid;
@@ -86,6 +87,7 @@
 @include respond-above(md){
   .second-featured{
     padding:0 0 var(--s);
+    margin: 0 0 var(--xl);
     img{border-radius: 0}
     .title, .cat{
       padding: 0 var(--m);

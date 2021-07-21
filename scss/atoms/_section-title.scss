@@ -1,0 +1,33 @@
+.section-title, .widget-title{
+  font-size: 0.8125rem;
+  color: var(--c-secondary);
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  border-top: 2px solid var(--c-main);
+  text-align: center;
+  width: calc(100% + var(--m)*2);
+  margin: 0 calc(-1 * var(--m)) var(--l);
+  &:before{
+    content: "";
+    background: url("img/title-heart.svg") no-repeat center center;
+    width: 21px;
+    height: 25px;
+    background-size: 100%;
+    display: inline-block;
+    transform: translateY(var(--s));
+  }
+}
+@include respond-above(md){
+  .section-title, .widget-title{
+    font-size: 1.5rem;
+    text-align: left;
+    border-top: 5px solid var(--c-main);
+    margin: 0 0 var(--l);
+    width: 100%;
+    &:before{
+      width: 27px;
+      height: 33px;
+      margin-right: var(--s);
+    }
+  }
+}

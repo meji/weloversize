@@ -5,10 +5,10 @@
   padding: 0 var(--l);
   height: 49px;
   color: #000;
-  background: var(--c-secondary);
+  background: var(--c-main);
   font-weight: 600;
   letter-spacing: 0.04em;
-  border: none;
+  border: 1px solid var(--c-secondary);
   width: fit-content;
   transition: var(--transition);
   white-space: nowrap;
@@ -18,7 +18,7 @@
     width: 100%;
   }
   &:hover{
-    background: var(--c-main);
+    background: var(--c-yellow);
   }
   &[disabled], &:disabled{
     background:var(--c-grey);
@@ -35,6 +35,9 @@
     margin-right: var(--s);
     font-size: 1.5rem;
   }
+}
+.btn-container{
+  padding: var(--xl) 0;
 }
 
 @include respond-above(sm){

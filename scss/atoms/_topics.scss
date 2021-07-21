@@ -1,0 +1,24 @@
+.widget_display_topics{
+  margin-bottom: var(--xxl);
+  ul li{
+    list-style: none;
+    border-bottom: 1px solid var(--c-pink-light);
+    margin: 0;
+    a{
+      font-size: 0.75rem;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      height: 32px;
+      color: var(--c-secondary);
+      &:after{
+        font-family:"Font Awesome 5 Free" !important;
+        content: "\f105";
+        display: inline-block;
+        font-weight: 900;
+        opacity: 0.6;
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.normal-modules{
+  &.separated{
+    &:before{
+      content: "";
+      width: calc(100% + var(--m)*2);
+      border-top: 2px solid var(--c-main);
+      margin: 0 calc(-1 * var(--m)) var(--xxl);
+      grid-column: -1/1;
+      display: block;
+    }
+  }
+  .normal-module{
+    position: relative;
+    font-size: 1rem;
+    margin-bottom: var(--xxl);
+    img{
+      width: calc(100% + var(--m)*2);
+      max-width: calc(100% + var(--m)*2);
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      margin: 0 calc(-1 * var(--m));
+    }
+    .cat{
+      display: inline-block;
+      transform: translateY(-50%);
+      margin: 0;
+      a{
+        color: var(--on-c-main);
+        text-transform: uppercase;
+        font-size: 0.6875rem;
+        font-weight: 400;
+        background: var(--c-main);
+        display: inline-flex;
+        padding: 0 var(--m);
+        height: 24px;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .title{
+      margin: 0 0 var(--m);
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.2;
+      a{
+        color: var(--c-grey-dark);
+        &:hover{
+          color: var(--c-link);
+        }
+        &:before{
+          content:"";
+          width: 24px;
+          height: 25px;
+          background: url("img/empty-heart.svg") no-repeat center center;
+          background-size: 100%;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+@include respond-above(md){
+  .normal-modules {
+    &.separated{
+      &:before{
+        border-top: 5px solid var(--c-main);
+        margin: 0 0 var(--xxl);
+        width: 100%;
+      }
+    }
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: var(--m);
+    .normal-module {
+      img {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .cat {
+        margin-left: var(--m);
+      }
+    }
+  }
+}
