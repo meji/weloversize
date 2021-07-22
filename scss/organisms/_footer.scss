@@ -10,24 +10,10 @@ footer#footer{
   .social{
     background: var(--c-pink-light);
     padding: var(--xxxxl) var(--l);
-    ul {
+    ul{
       flex-direction: row;
       li{
         margin: 0 var(--xl);
-        a{
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          width: 40px;
-          height: 40px;
-          background: var(--c-secondary);
-          color: var(--c-yellow);
-          border-radius: 100%;
-          &:hover{
-            background: #fff;
-            color: var(--c-secondary);
-          }
-        }
       }
     }
   }

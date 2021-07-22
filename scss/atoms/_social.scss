@@ -1,0 +1,27 @@
+ul.social-icon-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  list-style: none;
+  li{
+    margin: 0 var(--s);
+    padding: 0;
+    line-height: 0;
+    a{
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background: var(--c-secondary);
+      color: var(--c-yellow);
+      border-radius: 100%;
+      font-size: 1rem;
+      &:hover{
+        background: #fff;
+        color: var(--c-secondary);
+      }
+    }
+  }
+}

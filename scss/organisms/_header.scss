@@ -167,7 +167,7 @@ header#header{
         top: 60px;
         left: 0;
         width: 80vw;
-        min-height: calc(100vh - 90px);
+        min-height: calc(100vh - 60px);
         background: var(--c-main);
         transition: var(--transition);
         display: flex;
@@ -240,6 +240,34 @@ header#header{
         nav{
           top: 60px;
         }
+      }
+    }
+  }
+}
+@include respond-above(lg){
+  #wrapper {
+    #header {
+      nav {
+        ul {
+          flex: 1;
+          li.special {
+            i {
+              color: var(--c-main);
+            }
+
+            a {
+              color: var(--c-yellow);
+            }
+            &:not(:last-child){
+              margin-left: auto;
+            }
+          }
+        }
+      }
+      #search-button{
+        width: 25px;
+        height: 20px;
+        cursor:pointer;
       }
     }
   }

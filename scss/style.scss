@@ -17,6 +17,7 @@
 @import 'atoms/accordion';
 @import 'atoms/ads';
 @import 'atoms/btn';
+@import 'atoms/brief';
 @import 'atoms/colors';
 @import 'atoms/featured';
 @import 'atoms/links';
@@ -24,6 +25,8 @@
 @import 'atoms/normal-module';
 @import 'atoms/secondary-module';
 @import 'atoms/section-title';
+@import 'atoms/search';
+@import 'atoms/social';
 @import 'atoms/tabs';
 @import 'atoms/topics';
 @import 'atoms/typo';
@@ -38,4 +41,6 @@
 @import 'organisms/footer';
 @import 'organisms/forms/index';
 @import 'organisms/header';
+@import 'organisms/post';
 @import 'organisms/sections';
+

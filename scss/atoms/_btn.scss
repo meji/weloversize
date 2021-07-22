@@ -38,6 +38,7 @@
 }
 .btn-container{
   padding: var(--xl) 0;
+  text-align: center;
 }
 
 @include respond-above(sm){

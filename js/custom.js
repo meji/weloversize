@@ -27,6 +27,19 @@ const headerInteraction = () => {
     //   document.getElementById("wrapper").classList.toggle("open");
     // });
   }
+  if (document.getElementById("search-button")) {
+    document.getElementById("search-button").addEventListener("click", () => {
+      document.getElementById("wrapper").classList.add("search-open");
+    });
+    document
+      .getElementById("close-search-form")
+      .addEventListener("click", () => {
+        document.getElementById("wrapper").classList.remove("search-open");
+      });
+    // document.querySelector("#header .close").addEventListener("click", () => {
+    //   document.getElementById("wrapper").classList.toggle("open");
+    // });
+  }
 };
 
 //Método video interaction para cargar iframe de video al hacer click en la foto.
